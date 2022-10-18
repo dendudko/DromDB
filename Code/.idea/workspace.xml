@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af66ee80-6b0b-4850-8a33-672ba31b6275" name="Changes" comment="First 2 requests, some inserts">
-      <change beforePath="$PROJECT_DIR$/DromDB.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/DromDB.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DromDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DromDB.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DromDB_inserts.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DromDB_inserts.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StableDB/DromDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../StableDB/DromDB.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +74,14 @@
       <workItem from="1666106770372" duration="1658000" />
       <workItem from="1666109385955" duration="21000" />
     </task>
+    <task id="LOCAL-00001" summary="First 2 requests, some inserts">
+      <created>1666113355830</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1666113355830</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
