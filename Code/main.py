@@ -67,8 +67,8 @@ def queries_1_2():
     print(df)
     print('-----------------------------------------------------------------------------')
 
-drop_tables()
-init()
-fill()
+# drop_tables()
+# init()
+# fill()
 
 queries_1_2()
