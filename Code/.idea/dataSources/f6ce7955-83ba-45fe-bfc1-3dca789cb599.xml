@@ -1478,289 +1478,294 @@ CountryName</ColNames>
       <Unique>1</Unique>
     </index>
     <key id="524" parent="484">
+      <ColNames>CityName</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_City_1</UnderlyingIndexName>
+    </key>
+    <key id="525" parent="484">
       <ColNames>CityName
 CountryName</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_City_1</UnderlyingIndexName>
     </key>
-    <column id="525" parent="485" name="CountryName">
+    <column id="526" parent="485" name="CountryName">
       <DataType>VARCHAR(30)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <index id="526" parent="485" name="sqlite_autoindex_Country_1">
+    <index id="527" parent="485" name="sqlite_autoindex_Country_1">
       <ColNames>CountryName</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <key id="527" parent="485">
-      <ColNames>CountryName</ColNames>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>sqlite_autoindex_Country_1</UnderlyingIndexName>
-    </key>
     <key id="528" parent="485">
       <ColNames>CountryName</ColNames>
+      <Primary>1</Primary>
       <UnderlyingIndexName>sqlite_autoindex_Country_1</UnderlyingIndexName>
     </key>
-    <column id="529" parent="486" name="DriveType">
+    <key id="529" parent="485">
+      <ColNames>CountryName</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_Country_1</UnderlyingIndexName>
+    </key>
+    <column id="530" parent="486" name="DriveType">
       <DataType>VARCHAR(10)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <index id="530" parent="486" name="sqlite_autoindex_Drive_1">
+    <index id="531" parent="486" name="sqlite_autoindex_Drive_1">
       <ColNames>DriveType</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <key id="531" parent="486">
+    <key id="532" parent="486">
       <ColNames>DriveType</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>sqlite_autoindex_Drive_1</UnderlyingIndexName>
     </key>
-    <key id="532" parent="486">
+    <key id="533" parent="486">
       <ColNames>DriveType</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_Drive_1</UnderlyingIndexName>
     </key>
-    <column id="533" parent="487" name="IDEngine">
+    <column id="534" parent="487" name="IDEngine">
       <DataType>VARCHAR(10)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="534" parent="487" name="Capacity">
+    <column id="535" parent="487" name="Capacity">
       <DataType>DOUBLE|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="535" parent="487" name="HP">
+    <column id="536" parent="487" name="HP">
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="536" parent="487" name="FuelType">
+    <column id="537" parent="487" name="FuelType">
       <DataType>VARCHAR(20)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <foreign-key id="537" parent="487">
+    <foreign-key id="538" parent="487">
       <ColNames>FuelType</ColNames>
       <RefColNames>FuelType</RefColNames>
       <RefTableName>Fuel</RefTableName>
     </foreign-key>
-    <index id="538" parent="487" name="sqlite_autoindex_Engine_1">
+    <index id="539" parent="487" name="sqlite_autoindex_Engine_1">
       <ColNames>IDEngine</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <key id="539" parent="487">
+    <key id="540" parent="487">
       <ColNames>IDEngine</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>sqlite_autoindex_Engine_1</UnderlyingIndexName>
     </key>
-    <key id="540" parent="487">
+    <key id="541" parent="487">
       <ColNames>IDEngine</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_Engine_1</UnderlyingIndexName>
     </key>
-    <column id="541" parent="488" name="FuelType">
+    <column id="542" parent="488" name="FuelType">
       <DataType>VARCHAR(20)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <index id="542" parent="488" name="sqlite_autoindex_Fuel_1">
+    <index id="543" parent="488" name="sqlite_autoindex_Fuel_1">
       <ColNames>FuelType</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <key id="543" parent="488">
+    <key id="544" parent="488">
       <ColNames>FuelType</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>sqlite_autoindex_Fuel_1</UnderlyingIndexName>
     </key>
-    <key id="544" parent="488">
+    <key id="545" parent="488">
       <ColNames>FuelType</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_Fuel_1</UnderlyingIndexName>
     </key>
-    <column id="545" parent="489" name="BrandName">
+    <column id="546" parent="489" name="BrandName">
       <DataType>VARCHAR(50)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="546" parent="489" name="ModelName">
+    <column id="547" parent="489" name="ModelName">
       <DataType>VARCHAR(50)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <foreign-key id="547" parent="489">
+    <foreign-key id="548" parent="489">
       <ColNames>BrandName</ColNames>
       <RefColNames>BrandName</RefColNames>
       <RefTableName>Brand</RefTableName>
     </foreign-key>
-    <index id="548" parent="489" name="sqlite_autoindex_Model_1">
+    <index id="549" parent="489" name="sqlite_autoindex_Model_1">
       <ColNames>BrandName
 ModelName</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <key id="549" parent="489">
+    <key id="550" parent="489">
       <ColNames>BrandName
 ModelName</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>sqlite_autoindex_Model_1</UnderlyingIndexName>
     </key>
-    <key id="550" parent="489">
+    <key id="551" parent="489">
       <ColNames>BrandName
 ModelName</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_Model_1</UnderlyingIndexName>
     </key>
-    <column id="551" parent="490" name="IDSelling">
+    <column id="552" parent="490" name="IDSelling">
       <DataType>INT|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="552" parent="490" name="IDCar">
+    <column id="553" parent="490" name="IDCar">
       <DataType>INT|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="553" parent="490" name="Actuality">
+    <column id="554" parent="490" name="Actuality">
       <DataType>TINYINT ZEROFILL|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="554" parent="490" name="Price">
+    <column id="555" parent="490" name="Price">
       <DataType>DOUBLE|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="555" parent="490" name="Description">
+    <column id="556" parent="490" name="Description">
       <DataType>VARCHAR(10000)|0s</DataType>
       <Position>5</Position>
     </column>
-    <column id="556" parent="490" name="AdditionDate">
+    <column id="557" parent="490" name="AdditionDate">
       <DataType>DATE|0s</DataType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="557" parent="490" name="ExpirationDate">
+    <column id="558" parent="490" name="ExpirationDate">
       <DataType>DATE|0s</DataType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
-    <foreign-key id="558" parent="490">
+    <foreign-key id="559" parent="490">
       <ColNames>IDCar</ColNames>
       <RefColNames>IDCar</RefColNames>
       <RefTableName>Car</RefTableName>
     </foreign-key>
-    <index id="559" parent="490" name="sqlite_autoindex_Selling_1">
+    <index id="560" parent="490" name="sqlite_autoindex_Selling_1">
       <ColNames>IDSelling</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <key id="560" parent="490">
+    <key id="561" parent="490">
       <ColNames>IDSelling</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>sqlite_autoindex_Selling_1</UnderlyingIndexName>
     </key>
-    <key id="561" parent="490">
+    <key id="562" parent="490">
       <ColNames>IDSelling</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_Selling_1</UnderlyingIndexName>
     </key>
-    <column id="562" parent="491" name="TransmissionType">
+    <column id="563" parent="491" name="TransmissionType">
       <DataType>VARCHAR(20)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <index id="563" parent="491" name="sqlite_autoindex_Transmission_1">
+    <index id="564" parent="491" name="sqlite_autoindex_Transmission_1">
       <ColNames>TransmissionType</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <key id="564" parent="491">
+    <key id="565" parent="491">
       <ColNames>TransmissionType</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>sqlite_autoindex_Transmission_1</UnderlyingIndexName>
     </key>
-    <key id="565" parent="491">
+    <key id="566" parent="491">
       <ColNames>TransmissionType</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_Transmission_1</UnderlyingIndexName>
     </key>
-    <column id="566" parent="492" name="IDUser">
+    <column id="567" parent="492" name="IDUser">
       <DataType>INT|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="567" parent="492" name="Login">
+    <column id="568" parent="492" name="Login">
       <DataType>VARCHAR(100)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="568" parent="492" name="Password">
+    <column id="569" parent="492" name="Password">
       <DataType>VARCHAR(100)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="569" parent="492" name="FIO">
+    <column id="570" parent="492" name="FIO">
       <DataType>VARCHAR(100)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="570" parent="492" name="PhoneNumber">
+    <column id="571" parent="492" name="PhoneNumber">
       <DataType>VARCHAR(20)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="571" parent="492" name="EmailAddress">
+    <column id="572" parent="492" name="EmailAddress">
       <DataType>VARCHAR(45)|0s</DataType>
       <Position>6</Position>
     </column>
-    <column id="572" parent="492" name="CityName">
+    <column id="573" parent="492" name="CityName">
       <DataType>VARCHAR(50)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
-    <foreign-key id="573" parent="492">
+    <foreign-key id="574" parent="492">
       <ColNames>CityName</ColNames>
       <RefColNames>CityName</RefColNames>
       <RefTableName>City</RefTableName>
     </foreign-key>
-    <index id="574" parent="492" name="sqlite_autoindex_User_1">
+    <index id="575" parent="492" name="sqlite_autoindex_User_1">
       <ColNames>IDUser</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <index id="575" parent="492" name="sqlite_autoindex_User_2">
+    <index id="576" parent="492" name="sqlite_autoindex_User_2">
       <ColNames>Login</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <key id="576" parent="492">
+    <key id="577" parent="492">
       <ColNames>IDUser</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>sqlite_autoindex_User_1</UnderlyingIndexName>
     </key>
-    <key id="577" parent="492">
+    <key id="578" parent="492">
       <ColNames>IDUser</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_User_1</UnderlyingIndexName>
     </key>
-    <key id="578" parent="492">
+    <key id="579" parent="492">
       <ColNames>Login</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_User_2</UnderlyingIndexName>
     </key>
-    <column id="579" parent="493" name="type">
+    <column id="580" parent="493" name="type">
       <DataType>TEXT|0s</DataType>
       <Position>1</Position>
     </column>
-    <column id="580" parent="493" name="name">
+    <column id="581" parent="493" name="name">
       <DataType>TEXT|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="581" parent="493" name="tbl_name">
+    <column id="582" parent="493" name="tbl_name">
       <DataType>TEXT|0s</DataType>
       <Position>3</Position>
     </column>
-    <column id="582" parent="493" name="rootpage">
+    <column id="583" parent="493" name="rootpage">
       <DataType>INT|0s</DataType>
       <Position>4</Position>
     </column>
-    <column id="583" parent="493" name="sql">
+    <column id="584" parent="493" name="sql">
       <DataType>TEXT|0s</DataType>
       <Position>5</Position>
     </column>

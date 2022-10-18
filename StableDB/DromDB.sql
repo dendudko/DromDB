@@ -102,7 +102,7 @@ CREATE TABLE `City`
 (
     `CityName`    VARCHAR(50) NOT NULL,
     `CountryName` VARCHAR(30) NOT NULL,
-    UNIQUE (`CityName`, `CountryName`)
+    UNIQUE (`CityName`, `CountryName`),
         PRIMARY KEY (`CityName`),
     FOREIGN KEY (`CountryName`)
         REFERENCES `Country` (`CountryName`)

@@ -74,6 +74,9 @@ INSERT INTO `Transmission` VALUES ('Механика');
 -- -----------------------------------------------------
 -- City
 -- -----------------------------------------------------
+INSERT INTO `City` VALUES ('Нью-Йорк', 'США');
+INSERT INTO `City` VALUES ('Токио', 'Япония');
+INSERT INTO `City` VALUES ('Гонконг', 'Китай');
 INSERT INTO `City` VALUES ('Абакан', 'Россия');
 INSERT INTO `City` VALUES ('Александров', 'Россия');
 INSERT INTO `City` VALUES ('Алупка', 'Россия');
@@ -2050,6 +2053,7 @@ INSERT INTO `Fuel` VALUES ('Бензин'), ('Дизель'), ('Электро')
 -- Engine
 -- -----------------------------------------------------
 INSERT INTO `Engine` VALUES ('2NZ-FE', '1.3', '87', 'Бензин');
+INSERT INTO `Engine` VALUES ('2SZ-FE', '1.3', '86', 'Бензин');
 
 -- -----------------------------------------------------
 -- User
@@ -2062,6 +2066,8 @@ INSERT INTO `User` VALUES ('1', 'PerviyUser', 'password', 'Perviy User Ivanovich
 -- -----------------------------------------------------
 INSERT INTO `Car` VALUES ('1', '1', 'NCP950050175', 'А059СН125', 'Toyota', 'Vitz', '2NZ-FE',
 '2009', 'АКПП', '4WD', 'F 4WD');
+INSERT INTO `Car` VALUES ('2', '1', 'SCP910020146', 'А555УР125', 'Toyota', 'Vitz', '2SZ-FE',
+'2009', 'АКПП', 'Передний', 'U');
 
 -- -----------------------------------------------------
 -- Selling
