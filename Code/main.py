@@ -3,6 +3,8 @@ import pandas as pd
 
 # создаем базу данных и устанавливаем соединение с ней
 con = sqlite3.connect("DromDB.sqlite")
+pd.set_option('display.max_colwidth', None, 'display.max_rows', None,
+              'display.max_columns', None, 'display.expand_frame_repr', False)
 
 def drop_tables():
     con.executescript('''
@@ -44,6 +46,29 @@ def fill():
     # сохраняем информацию в базе данных
     con.commit()
 
-drop_tables()
-init()
-fill()
+def queries_1_2():
+    print('-----------------------------------------------------------------------------')
+    print('Запрос 1 (Выбор всех нерусских городов):')
+    df = pd.read_sql('''select C.CountryName as Страна, CityName as Город from City
+    join Country C on C.CountryName = City.CountryName
+    where C.CountryName!='Россия'
+    order by CityName''', con)
+    print(df)
+
+    print()
+
+    print('Запрос 2 (Выбор всех двигателей, которые устанавливаются на а/м Toyota Vitz):')
+    df = pd.read_sql('''select BodyOrVinNumber as 'Номер_кузова',
+    C.IDEngine as 'Номер_двигателя', Capacity as 'Объем', HP as 'Мощность',
+    FuelType as 'Тип_топлива' from Engine
+    join Car C on Engine.IDEngine = C.IDEngine
+    where C.BrandName = 'Toyota' and C.ModelName='Vitz'
+    order by HP desc''', con)
+    print(df)
+    print('-----------------------------------------------------------------------------')
+
+# drop_tables()
+# init()
+# fill()
+
+queries_1_2()
