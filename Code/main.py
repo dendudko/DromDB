@@ -72,3 +72,4 @@ def queries_1_2():
 # fill()
 
 queries_1_2()
+
