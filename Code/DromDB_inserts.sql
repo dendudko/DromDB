@@ -2068,7 +2068,7 @@ INSERT INTO `User` VALUES ('2', 'VtoroyUser', 'password', 'Vtoroy User Petrovich
 -- -----------------------------------------------------
 INSERT INTO `Car` VALUES ('1', '1', 'NCP950050175', 'А059СН125', 'Toyota', 'Vitz', '2NZ-FE',
 '2009', 'АКПП', '4WD', 'F 4WD');
-INSERT INTO `Car` VALUES ('2', '1', 'SCP910020146', 'А555УР125', 'Toyota', 'Vitz', '2SZ-FE',
+INSERT INTO `Car` VALUES ('2', '2', 'SCP910020146', 'А555УР125', 'Toyota', 'Vitz', '2SZ-FE',
 '2009', 'АКПП', 'Передний', 'U');
 
 -- -----------------------------------------------------
