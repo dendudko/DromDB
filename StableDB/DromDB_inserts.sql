@@ -2054,6 +2054,9 @@ INSERT INTO `Fuel` VALUES ('Бензин'), ('Дизель'), ('Электро')
 -- -----------------------------------------------------
 INSERT INTO `Engine` VALUES ('2NZ-FE', '1.3', '87', 'Бензин');
 INSERT INTO `Engine` VALUES ('2SZ-FE', '1.3', '86', 'Бензин');
+INSERT INTO `Engine` VALUES ('1AD-FTV', '2', '127', 'Дизель');
+INSERT INTO `Engine` VALUES ('1KZ-TE', '3', '130', 'Дизель');
+INSERT INTO `Engine` VALUES ('1ZZ-FE', '1.8', '145', 'Бензин');
 
 -- -----------------------------------------------------
 -- User
@@ -2068,7 +2071,7 @@ INSERT INTO `User` VALUES ('2', 'VtoroyUser', 'password', 'Vtoroy User Petrovich
 -- -----------------------------------------------------
 INSERT INTO `Car` VALUES ('1', '1', 'NCP950050175', 'А059СН125', 'Toyota', 'Vitz', '2NZ-FE',
 '2009', 'АКПП', '4WD', 'F 4WD');
-INSERT INTO `Car` VALUES ('2', '1', 'SCP910020146', 'А555УР125', 'Toyota', 'Vitz', '2SZ-FE',
+INSERT INTO `Car` VALUES ('2', '2', 'SCP910020146', 'А555УР125', 'Toyota', 'Vitz', '2SZ-FE',
 '2009', 'АКПП', 'Передний', 'U');
 
 -- -----------------------------------------------------
