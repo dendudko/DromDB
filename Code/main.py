@@ -46,13 +46,15 @@ def fill():
     # сохраняем информацию в базе данных
     con.commit()
 
-def queries_1_2():
+def request_1_2():
     print('-----------------------------------------------------------------------------')
-    print('Запрос 1 (Выбор всех нерусских городов):')
-    df = pd.read_sql('''select C.CountryName as Страна, CityName as Город from City
-    join Country C on C.CountryName = City.CountryName
-    where C.CountryName!='Россия'
-    order by CityName''', con)
+    print('Запрос 1 (Выбор авто и их продавцов из Уссурийска):')
+    df = pd.read_sql('''select FIO as ФИО, C.BodyOrVinNumber as Номер_кузова,
+    C.StateNumber as Гос_номер, CityName as Город from User
+    join Car C on User.IDUser = C.IDUser
+    where CityName = 'Уссурийск'
+    order by FIO desc
+    ''', con)
     print(df)
 
     print()
@@ -71,4 +73,4 @@ def queries_1_2():
 # init()
 # fill()
 
-queries_1_2()
+request_1_2()
