@@ -151,7 +151,7 @@ def request_7_8():
 
 
 # Main
-refill()
+refill() #После первого запуска эту строку можно закомментировать
 request_1_2()
 request_3_4()
 request_5_6()
