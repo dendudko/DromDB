@@ -2054,6 +2054,9 @@ INSERT INTO `Fuel` VALUES ('Бензин'), ('Дизель'), ('Электро')
 -- -----------------------------------------------------
 INSERT INTO `Engine` VALUES ('2NZ-FE', '1.3', '87', 'Бензин');
 INSERT INTO `Engine` VALUES ('2SZ-FE', '1.3', '86', 'Бензин');
+INSERT INTO `Engine` VALUES ('1AD-FTV', '2', '127', 'Дизель');
+INSERT INTO `Engine` VALUES ('1KZ-TE', '3', '130', 'Дизель');
+INSERT INTO `Engine` VALUES ('1ZZ-FE', '1.8', '145', 'Бензин');
 
 -- -----------------------------------------------------
 -- User

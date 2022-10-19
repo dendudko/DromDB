@@ -69,8 +69,29 @@ def request_1_2():
     print(df)
     print('-----------------------------------------------------------------------------')
 
+def request_3_4():
+    print('-----------------------------------------------------------------------------')
+    print('Запрос 3 (Выбор стран, автомобили из которых есть в каталоге):')
+    df = pd.read_sql('''select CountryName as Страна from Brand
+    group by CountryName
+    order by CountryName
+    ''', con)
+    print(df)
+
+    print()
+
+    print('Запрос 4 (Выбор всех марок, модели которых сейчас продаются):')
+    df = pd.read_sql('''select C.BrandName as Марка from Selling
+    join Car C on C.IDCar = Selling.IDCar
+    where Actuality = true
+    group by C.BrandName
+    ''', con)
+    print(df)
+    print('-----------------------------------------------------------------------------')
+
 # drop_tables()
 # init()
 # fill()
 
 request_1_2()
+request_3_4()
