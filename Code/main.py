@@ -53,7 +53,7 @@ def request_1_2():
     C.StateNumber as Гос_номер, CityName as Город from User
     join Car C on User.IDUser = C.IDUser
     where CityName = 'Уссурийск'
-    order by FIO desc
+    order by FIO
     ''', con)
     print(df)
 
