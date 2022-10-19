@@ -89,9 +89,29 @@ def request_3_4():
     print(df)
     print('-----------------------------------------------------------------------------')
 
+def request_5_6():
+    print('-----------------------------------------------------------------------------')
+    print('Запрос 5 (Выбор страны, у которой больше всего марок):')
+    df = pd.read_sql('''select CountryName as Страна, max(count) as Количество_марок from 
+    (select Brand.CountryName, count(Brand.CountryName) as count from Brand
+    group by Brand.CountryName)
+    ''', con)
+    print(df)
+
+    print()
+
+    print('Запрос 6 (Выбор марки, у которой меньше всего моделей):')
+    df = pd.read_sql('''select BrandName as Марка, min(count) as Количество_марок from 
+        (select Model.BrandName, count(Model.ModelName) as count from Model
+        group by Model.BrandName)
+        ''', con)
+    print(df)
+    print('-----------------------------------------------------------------------------')
+
 # drop_tables()
 # init()
 # fill()
 
 request_1_2()
 request_3_4()
+request_5_6()
