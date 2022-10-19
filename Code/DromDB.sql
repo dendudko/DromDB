@@ -121,8 +121,8 @@ CREATE TABLE `User`
     `Login`        VARCHAR(100) NOT NULL UNIQUE,
     `Password`     VARCHAR(100) NOT NULL,
     `FIO`          VARCHAR(100) NOT NULL,
-    `PhoneNumber`  VARCHAR(20)  NOT NULL,
-    `EmailAddress` VARCHAR(45) NULL,
+    `PhoneNumber`  VARCHAR(20)  NOT NULL UNIQUE,
+    `EmailAddress` VARCHAR(45) NULL UNIQUE,
     `CityName`     VARCHAR(50)  NOT NULL,
     PRIMARY KEY (`IDUser`),
     FOREIGN KEY (`CityName`)

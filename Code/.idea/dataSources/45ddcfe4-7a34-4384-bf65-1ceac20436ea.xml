@@ -1736,36 +1736,54 @@ ModelName</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <key id="577" parent="492">
+    <index id="577" parent="492" name="sqlite_autoindex_User_3">
+      <ColNames>PhoneNumber</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Unique>1</Unique>
+    </index>
+    <index id="578" parent="492" name="sqlite_autoindex_User_4">
+      <ColNames>EmailAddress</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Unique>1</Unique>
+    </index>
+    <key id="579" parent="492">
       <ColNames>IDUser</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>sqlite_autoindex_User_1</UnderlyingIndexName>
     </key>
-    <key id="578" parent="492">
+    <key id="580" parent="492">
       <ColNames>IDUser</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_User_1</UnderlyingIndexName>
     </key>
-    <key id="579" parent="492">
+    <key id="581" parent="492">
       <ColNames>Login</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_User_2</UnderlyingIndexName>
     </key>
-    <column id="580" parent="493" name="type">
+    <key id="582" parent="492">
+      <ColNames>PhoneNumber</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_User_3</UnderlyingIndexName>
+    </key>
+    <key id="583" parent="492">
+      <ColNames>EmailAddress</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_User_4</UnderlyingIndexName>
+    </key>
+    <column id="584" parent="493" name="type">
       <DataType>TEXT|0s</DataType>
       <Position>1</Position>
     </column>
-    <column id="581" parent="493" name="name">
+    <column id="585" parent="493" name="name">
       <DataType>TEXT|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="582" parent="493" name="tbl_name">
+    <column id="586" parent="493" name="tbl_name">
       <DataType>TEXT|0s</DataType>
       <Position>3</Position>
     </column>
-    <column id="583" parent="493" name="rootpage">
+    <column id="587" parent="493" name="rootpage">
       <DataType>INT|0s</DataType>
       <Position>4</Position>
     </column>
-    <column id="584" parent="493" name="sql">
+    <column id="588" parent="493" name="sql">
       <DataType>TEXT|0s</DataType>
       <Position>5</Position>
     </column>

@@ -2060,6 +2060,8 @@ INSERT INTO `Engine` VALUES ('2SZ-FE', '1.3', '86', 'Бензин');
 -- -----------------------------------------------------
 INSERT INTO `User` VALUES ('1', 'PerviyUser', 'password', 'Perviy User Ivanovich', '+79147981955',
 'pervyi@mail.ru', 'Владивосток');
+INSERT INTO `User` VALUES ('2', 'VtoroyUser', 'password', 'Vtoroy User Petrovich', '+79147273155',
+'vtoroy@mail.ru', 'Уссурийск');
 
 -- -----------------------------------------------------
 -- Car
@@ -2073,4 +2075,6 @@ INSERT INTO `Car` VALUES ('2', '1', 'SCP910020146', 'А555УР125', 'Toyota', 'V
 -- Selling
 -- -----------------------------------------------------
 INSERT INTO `Selling` VALUES ('1', '1', true, 400000, 'Машина - огонь', CURRENT_DATE,
+                                                                   DATE(CURRENT_DATE,'+3 months'));
+INSERT INTO `Selling` VALUES ('2', '2', true, 340000, 'Машина - пожар', CURRENT_DATE,
                                                                    DATE(CURRENT_DATE,'+3 months'));
