@@ -1547,6 +1547,8 @@ CountryName</ColNames>
     </column>
     <foreign-key id="538" parent="487">
       <ColNames>FuelType</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
       <RefColNames>FuelType</RefColNames>
       <RefTableName>Fuel</RefTableName>
     </foreign-key>

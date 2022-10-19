@@ -1,6 +1,3 @@
-PRAGMA
-foreign_keys=on;
-
 -- -----------------------------------------------------
 -- Table `Fuel`
 -- -----------------------------------------------------
@@ -24,8 +21,8 @@ CREATE TABLE `Engine`
     PRIMARY KEY (`IDEngine`),
     FOREIGN KEY (`FuelType`)
         REFERENCES `Fuel` (`FuelType`)
-        ON DELETE NO ACTION
-        ON UPDATE NO ACTION
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
 );
 
 

@@ -5,6 +5,9 @@ import pandas as pd
 con = sqlite3.connect("DromDB.sqlite")
 pd.set_option('display.max_colwidth', None, 'display.max_rows', None,
               'display.max_columns', None, 'display.expand_frame_repr', False)
+cursor = con.cursor()
+con.executescript('''PRAGMA foreign_keys=on''')
+
 
 def drop_tables():
     con.executescript('''
@@ -22,6 +25,7 @@ def drop_tables():
     ''')
     con.commit()
 
+
 def init():
     # открываем файл с дампом базы данных
     f_dump = open('DromDB.sql', 'r', encoding='utf-8-sig')
@@ -34,6 +38,7 @@ def init():
     # сохраняем информацию в базе данных
     con.commit()
 
+
 def fill():
     # открываем файл с инсертами базы данных
     f_dump = open('DromDB_inserts.sql', 'r', encoding='utf-8-sig')
@@ -45,6 +50,13 @@ def fill():
     con.executescript(dump)
     # сохраняем информацию в базе данных
     con.commit()
+
+
+def refill():
+    drop_tables()
+    init()
+    fill()
+
 
 def request_1_2():
     print('-----------------------------------------------------------------------------')
@@ -69,6 +81,7 @@ def request_1_2():
     print(df)
     print('-----------------------------------------------------------------------------')
 
+
 def request_3_4():
     print('-----------------------------------------------------------------------------')
     print('Запрос 3 (Выбор стран, автомобили из которых есть в каталоге):')
@@ -89,6 +102,7 @@ def request_3_4():
     print(df)
     print('-----------------------------------------------------------------------------')
 
+
 def request_5_6():
     print('-----------------------------------------------------------------------------')
     print('Запрос 5 (Выбор страны, у которой больше всего марок):')
@@ -101,17 +115,44 @@ def request_5_6():
     print()
 
     print('Запрос 6 (Выбор марки, у которой меньше всего моделей):')
-    df = pd.read_sql('''select BrandName as Марка, min(count) as Количество_марок from 
+    df = pd.read_sql('''select BrandName as Марка, min(count) as Количество_моделей from 
         (select Model.BrandName, count(Model.ModelName) as count from Model
         group by Model.BrandName)
         ''', con)
     print(df)
     print('-----------------------------------------------------------------------------')
 
-# drop_tables()
-# init()
-# fill()
 
+def request_7_8():
+    print('-----------------------------------------------------------------------------')
+    print('Запрос 7 (Изменяем название топлива: Дизель -> Солярка):')
+    cursor.executescript('''update Fuel 
+    set FuelType = 'Солярка'
+    where FuelType = 'Дизель'
+    ''')
+    df = pd.read_sql('''select * from Fuel''', con)
+    print(df)
+    print()
+    df = pd.read_sql('''select * from Engine''', con)
+    print(df)
+
+    print()
+
+    print('Запрос 8 (Удаляем из БД неиспользуемые страны):')
+    cursor.executescript('''delete from Country 
+        where CountryName not in (select CountryName from Brand)
+        ''')
+    df = pd.read_sql('''select * from Country order by CountryName''', con)
+    print(df)
+    print()
+    print('После всего этого безобразия восстанавливаем БД...')
+    refill()
+    print('-----------------------------------------------------------------------------')
+
+
+# Main
+refill()
 request_1_2()
 request_3_4()
 request_5_6()
+request_7_8()
