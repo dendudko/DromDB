@@ -110,14 +110,15 @@ def request_5_6():
     # df = pd.read_sql('''
     # with nt1 as (select CountryName, count(CountryName) as count from Brand
     # group by CountryName),
-    # nt2 as (select CountryName, max(count) as max from nt1)
-    # select nt1.CountryName, count from nt1, nt2
-    # where nt1.count = nt2.max;
+    # nt2 as (select max(count) as max from nt1)
+    # select nt1.CountryName, nt1.count from nt1, nt2
+    # where nt1.count = nt2.max
+    # group by nt1.CountryName
     # ''', con)
     # print(df)
 
     print('Запрос 5 (Выбор страны, у которой больше всего марок):')
-    df = pd.read_sql('''select CountryName as Страна, max(count) as Количество_марок from 
+    df = pd.read_sql('''select CountryName as Страна, max(count) as Количество_марок from
         (select Brand.CountryName, count(Brand.CountryName) as count from Brand
         group by Brand.CountryName)
         ''', con)
@@ -162,7 +163,7 @@ def request_7_8():
 
 
 # Main
-refill() #После первого запуска эту строку можно закомментировать
+# refill() #После первого запуска эту строку можно закомментировать
 request_1_2()
 request_3_4()
 request_5_6()
