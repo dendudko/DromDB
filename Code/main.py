@@ -105,11 +105,22 @@ def request_3_4():
 
 def request_5_6():
     print('-----------------------------------------------------------------------------')
+    # # Запрос в правильном виде?
+    # print('Запрос 5 (Выбор страны, у которой больше всего марок):')
+    # df = pd.read_sql('''
+    # with nt1 as (select CountryName, count(CountryName) as count from Brand
+    # group by CountryName),
+    # nt2 as (select CountryName, max(count) as max from nt1)
+    # select nt1.CountryName, count from nt1, nt2
+    # where nt1.count = nt2.max;
+    # ''', con)
+    # print(df)
+
     print('Запрос 5 (Выбор страны, у которой больше всего марок):')
     df = pd.read_sql('''select CountryName as Страна, max(count) as Количество_марок from 
-    (select Brand.CountryName, count(Brand.CountryName) as count from Brand
-    group by Brand.CountryName)
-    ''', con)
+        (select Brand.CountryName, count(Brand.CountryName) as count from Brand
+        group by Brand.CountryName)
+        ''', con)
     print(df)
 
     print()
