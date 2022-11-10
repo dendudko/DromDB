@@ -1,0 +1,133 @@
+Index: main.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/main.py b/main.py
+--- a/main.py	
++++ b/main.py	
+@@ -163,7 +163,7 @@
+ 
+ 
+ # Main
+-# refill() #После первого запуска эту строку можно закомментировать
++refill() #После первого запуска эту строку можно закомментировать
+ request_1_2()
+ request_3_4()
+ request_5_6()
+Index: DromDB.sql
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/DromDB.sql b/DromDB.sql
+--- a/DromDB.sql	
++++ b/DromDB.sql	
+@@ -100,7 +100,7 @@
+     `CityName`    VARCHAR(50) NOT NULL,
+     `CountryName` VARCHAR(30) NOT NULL,
+     UNIQUE (`CityName`, `CountryName`),
+-        PRIMARY KEY (`CityName`),
++    PRIMARY KEY (`CityName`),
+     FOREIGN KEY (`CountryName`)
+         REFERENCES `Country` (`CountryName`)
+         ON DELETE NO ACTION
+@@ -114,14 +114,14 @@
+ DROP TABLE IF EXISTS `User`;
+ CREATE TABLE `User`
+ (
+-    `IDUser`       INT          NOT NULL UNIQUE,
++    `IDUser`       INTEGER      NOT NULL UNIQUE,
+     `Login`        VARCHAR(100) NOT NULL UNIQUE,
+     `Password`     VARCHAR(100) NOT NULL,
+     `FIO`          VARCHAR(100) NOT NULL,
+     `PhoneNumber`  VARCHAR(20)  NOT NULL UNIQUE,
+-    `EmailAddress` VARCHAR(45) NULL UNIQUE,
++    `EmailAddress` VARCHAR(45)  NULL UNIQUE,
+     `CityName`     VARCHAR(50)  NOT NULL,
+-    PRIMARY KEY (`IDUser`),
++    PRIMARY KEY (`IDUser` autoincrement),
+     FOREIGN KEY (`CityName`)
+         REFERENCES `City` (`CityName`)
+         ON DELETE NO ACTION
+@@ -135,8 +135,8 @@
+ DROP TABLE IF EXISTS `Car`;
+ CREATE TABLE `Car`
+ (
+-    `IDCar`            INT         NOT NULL UNIQUE,
+-    `IDUser`           INT         NOT NULL,
++    `IDCar`            INTEGER     NOT NULL UNIQUE,
++    `IDUser`           INTEGER     NOT NULL,
+     `BodyOrVinNumber`  VARCHAR(45) NOT NULL,
+     `StateNumber`      VARCHAR(45) NOT NULL,
+     `BrandName`        VARCHAR(50) NOT NULL,
+@@ -146,7 +146,7 @@
+     `TransmissionType` VARCHAR(20) NOT NULL,
+     `DriveType`        VARCHAR(10) NOT NULL,
+     `IDEquip`          VARCHAR(45) NULL,
+-    PRIMARY KEY (`IDCar`),
++    PRIMARY KEY (`IDCar` AUTOINCREMENT),
+     FOREIGN KEY (`IDEngine`)
+         REFERENCES `Engine` (`IDEngine`)
+         ON DELETE NO ACTION
+@@ -176,14 +176,14 @@
+ DROP TABLE IF EXISTS `Selling`;
+ CREATE TABLE `Selling`
+ (
+-    `IDSelling`      INT    NOT NULL UNIQUE,
+-    `IDCar`          INT    NOT NULL,
++    `IDSelling`      INTEGER          NOT NULL UNIQUE,
++    `IDCar`          INTEGER          NOT NULL,
+     `Actuality`      TINYINT ZEROFILL NOT NULL,
+-    `Price`          DOUBLE NOT NULL,
+-    `Description`    VARCHAR(10000) NULL,
+-    `AdditionDate`   DATE   NOT NULL,
+-    `ExpirationDate` DATE   NOT NULL,
+-    PRIMARY KEY (`IDSelling`),
++    `Price`          DOUBLE           NOT NULL,
++    `Description`    VARCHAR(10000)   NULL,
++    `AdditionDate`   DATE             NOT NULL,
++    `ExpirationDate` DATE             NOT NULL,
++    PRIMARY KEY (`IDSelling` AUTOINCREMENT),
+     FOREIGN KEY (`IDCar`)
+         REFERENCES `Car` (`IDCar`)
+         ON DELETE NO ACTION
+Index: DromDB_inserts.sql
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/DromDB_inserts.sql b/DromDB_inserts.sql
+--- a/DromDB_inserts.sql	
++++ b/DromDB_inserts.sql	
+@@ -2061,23 +2061,23 @@
+ -- -----------------------------------------------------
+ -- User
+ -- -----------------------------------------------------
+-INSERT INTO `User` VALUES ('1', 'PerviyUser', 'password', 'Perviy User Ivanovich', '+79147981955',
++INSERT INTO `User` VALUES (null, 'PerviyUser', 'password', 'Perviy User Ivanovich', '+79147981955',
+ 'pervyi@mail.ru', 'Владивосток');
+-INSERT INTO `User` VALUES ('2', 'VtoroyUser', 'password', 'Vtoroy User Petrovich', '+79147273155',
++INSERT INTO `User` VALUES (null, 'VtoroyUser', 'password', 'Vtoroy User Petrovich', '+79147273155',
+ 'vtoroy@mail.ru', 'Уссурийск');
+ 
+ -- -----------------------------------------------------
+ -- Car
+ -- -----------------------------------------------------
+-INSERT INTO `Car` VALUES ('1', '1', 'NCP950050175', 'А059СН125', 'Toyota', 'Vitz', '2NZ-FE',
++INSERT INTO `Car` VALUES (null, '1', 'NCP950050175', 'А059СН125', 'Toyota', 'Vitz', '2NZ-FE',
+ '2009', 'АКПП', '4WD', 'F 4WD');
+-INSERT INTO `Car` VALUES ('2', '2', 'SCP910020146', 'А555УР125', 'Toyota', 'Vitz', '2SZ-FE',
++INSERT INTO `Car` VALUES (null, '2', 'SCP910020146', 'А555УР125', 'Toyota', 'Vitz', '2SZ-FE',
+ '2009', 'АКПП', 'Передний', 'U');
+ 
+ -- -----------------------------------------------------
+ -- Selling
+ -- -----------------------------------------------------
+-INSERT INTO `Selling` VALUES ('1', '1', true, 400000, 'Машина - огонь', CURRENT_DATE,
++INSERT INTO `Selling` VALUES (null, '1', true, 400000, 'Машина - огонь', CURRENT_DATE,
+                                                                    DATE(CURRENT_DATE,'+3 months'));
+-INSERT INTO `Selling` VALUES ('2', '2', true, 340000, 'Машина - пожар', CURRENT_DATE,
++INSERT INTO `Selling` VALUES (null, '2', true, 340000, 'Машина - пожар', CURRENT_DATE,
+                                                                    DATE(CURRENT_DATE,'+3 months'));
+\ No newline at end of file
